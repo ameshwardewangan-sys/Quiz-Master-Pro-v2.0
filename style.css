@@ -1,0 +1,702 @@
+/* =========================================================
+   Quiz Master Pro v2.0
+   style.css
+   Part 1
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#4f46e5;
+    --primary-dark:#3730a3;
+    --secondary:#06b6d4;
+    --success:#22c55e;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+
+    --bg:#eef2ff;
+    --card:#ffffff;
+    --text:#111827;
+    --text-light:#6b7280;
+    --border:#dbe4ff;
+
+    --shadow:0 12px 30px rgba(0,0,0,.12);
+    --radius:22px;
+    --transition:.30s;
+}
+
+body.dark{
+
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f8fafc;
+    --text-light:#94a3b8;
+    --border:#334155;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+    transition:.3s;
+}
+
+.screen{
+
+    display:none;
+    min-height:100vh;
+    padding:20px;
+    animation:fade .35s ease;
+}
+
+.screen.active{
+    display:block;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.top-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.top-header h2{
+
+    font-size:28px;
+    font-weight:700;
+}
+
+.top-header p{
+
+    color:var(--text-light);
+    margin-top:4px;
+}
+
+.icon-btn{
+
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:var(--card);
+    box-shadow:var(--shadow);
+    cursor:pointer;
+    font-size:22px;
+    transition:var(--transition);
+}
+
+.icon-btn:hover{
+
+    transform:scale(1.08);
+}
+
+.primary-btn{
+
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+}
+
+.secondary-btn{
+
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    background:var(--card);
+    color:var(--text);
+    border:2px solid var(--border);
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.secondary-btn:hover{
+
+    transform:translateY(-3px);
+    border-color:var(--primary);
+}
+
+.hero-card{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+    padding:35px;
+    border-radius:28px;
+    margin-bottom:30px;
+    box-shadow:var(--shadow);
+}
+
+.hero-card h1{
+
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.hero-card p{
+
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+.hero-buttons{
+
+    display:grid;
+    gap:15px;
+}
+/* =========================================================
+   Quiz Master Pro v2.0
+   style.css
+   Part 2
+========================================================= */
+
+.stats-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:22px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+}
+
+.stat-card h3{
+
+    font-size:30px;
+    color:var(--primary);
+    margin-bottom:8px;
+}
+
+.stat-card p{
+
+    color:var(--text-light);
+    font-size:14px;
+}
+
+.section-title{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.section-title h2{
+
+    font-size:24px;
+    font-weight:700;
+}
+
+.category-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.category-card{
+
+    border:none;
+    cursor:pointer;
+    background:var(--card);
+    border-radius:24px;
+    padding:28px 18px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+    transition:.30s;
+}
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+    border-color:var(--primary);
+}
+
+.category-card .emoji{
+
+    font-size:42px;
+    margin-bottom:16px;
+}
+
+.category-card h3{
+
+    margin-bottom:8px;
+    font-size:20px;
+}
+
+.category-card p{
+
+    color:var(--text-light);
+    font-size:14px;
+}
+
+.quiz-header{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:24px;
+}
+
+.progress-area{
+
+    flex:1;
+}
+
+.progress-text{
+
+    display:flex;
+    justify-content:center;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.progress-bar{
+
+    width:100%;
+    height:12px;
+    background:var(--border);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        var(--success),
+        var(--secondary)
+    );
+    transition:.35s;
+}
+
+.timer{
+
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--danger);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:700;
+    box-shadow:var(--shadow);
+}
+
+.quiz-container{
+
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.question-card{
+
+    background:var(--card);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+}
+
+.question-category{
+
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:50px;
+    background:var(--primary);
+    color:white;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.question-card h2{
+
+    line-height:1.6;
+    font-size:25px;
+      }
+/* =========================================================
+   Quiz Master Pro v2.0
+   style.css
+   Part 3
+========================================================= */
+
+.answer-container{
+
+    display:grid;
+    gap:16px;
+}
+
+.answer-btn{
+
+    width:100%;
+    padding:18px 20px;
+    border-radius:18px;
+    border:2px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    font-size:16px;
+    font-weight:600;
+    text-align:left;
+    cursor:pointer;
+    transition:var(--transition);
+    box-shadow:var(--shadow);
+}
+
+.answer-btn:hover{
+
+    transform:translateY(-4px);
+    border-color:var(--primary);
+}
+
+.answer-btn.correct{
+
+    background:var(--success);
+    color:#fff;
+    border-color:var(--success);
+}
+
+.answer-btn.wrong{
+
+    background:var(--danger);
+    color:#fff;
+    border-color:var(--danger);
+}
+
+.quiz-bottom{
+
+    margin-top:10px;
+}
+
+.result-box{
+
+    max-width:700px;
+    margin:50px auto;
+    background:var(--card);
+    border-radius:28px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+}
+
+.result-emoji{
+
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.result-box h1{
+
+    margin-bottom:10px;
+}
+
+.result-box h2{
+
+    font-size:40px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.result-box p{
+
+    color:var(--text-light);
+}
+
+.result-stats{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin:35px 0;
+}
+
+.result-item{
+
+    background:var(--bg);
+    border-radius:18px;
+    padding:18px;
+}
+
+.result-item span{
+
+    display:block;
+    font-size:13px;
+    color:var(--text-light);
+    margin-bottom:8px;
+}
+
+.result-item strong{
+
+    font-size:24px;
+    color:var(--primary);
+}
+
+.result-buttons{
+
+    display:grid;
+    gap:15px;
+}
+
+.leaderboard-container{
+
+    margin-top:25px;
+}
+
+.leader-card{
+
+    background:linear-gradient(
+        135deg,
+        #f59e0b,
+        #facc15
+    );
+    color:white;
+    text-align:center;
+    padding:30px;
+    border-radius:24px;
+    margin-bottom:25px;
+    box-shadow:var(--shadow);
+}
+
+.leader-card h3{
+
+    margin:12px 0;
+}
+
+.leaderboard-list{
+
+    display:grid;
+    gap:14px;
+      }
+/* =========================================================
+   Quiz Master Pro v2.0
+   style.css
+   Part 4 (Final)
+========================================================= */
+
+.leaderboard-item{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:18px 20px;
+    box-shadow:var(--shadow);
+}
+
+.modal{
+
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(5px);
+    z-index:999;
+}
+
+.modal.active{
+
+    display:flex;
+}
+
+.modal-content{
+
+    width:min(92%,420px);
+    background:var(--card);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.modal-content h2{
+
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.setting-item{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.setting-item:last-child{
+
+    border-bottom:none;
+    margin-bottom:20px;
+}
+
+.toast{
+
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:#111827;
+    color:#fff;
+    padding:14px 24px;
+    border-radius:50px;
+    opacity:0;
+    pointer-events:none;
+    transition:.35s;
+    z-index:1000;
+}
+
+.toast.show{
+
+    opacity:1;
+}
+
+.bg-animation{
+
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.bg-animation span{
+
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:rgba(255,255,255,.18);
+    border-radius:50%;
+    animation:float 12s linear infinite;
+}
+
+.bg-animation span:nth-child(1){left:10%;top:20%;}
+.bg-animation span:nth-child(2){left:75%;top:15%;}
+.bg-animation span:nth-child(3){left:40%;top:65%;}
+.bg-animation span:nth-child(4){left:85%;top:80%;}
+.bg-animation span:nth-child(5){left:18%;top:82%;}
+.bg-animation span:nth-child(6){left:55%;top:35%;}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) scale(1);
+    }
+
+    50%{
+        transform:translateY(-35px) scale(1.25);
+    }
+
+    100%{
+        transform:translateY(0) scale(1);
+    }
+}
+
+@media(max-width:700px){
+
+    .stats-grid,
+    .category-grid,
+    .result-stats{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+
+        padding:25px;
+    }
+
+    .hero-card h1{
+
+        font-size:28px;
+    }
+
+    .question-card h2{
+
+        font-size:21px;
+    }
+
+    .timer{
+
+        width:54px;
+        height:54px;
+        font-size:20px;
+    }
+
+    .top-header h2{
+
+        font-size:22px;
+    }
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+      }
