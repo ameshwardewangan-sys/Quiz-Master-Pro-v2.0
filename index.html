@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+/>
+
+<title>Quiz Master Pro v2.0</title>
+
+<meta
+name="theme-color"
+content="#0f172a"
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+/>
+
+<link
+rel="stylesheet"
+href="style.css"
+/>
+
+</head>
+
+<body>
+
+<!-- Splash Screen -->
+
+<div id="splashScreen" class="screen active">
+
+<div class="bg-animation">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<div class="logo-box">
+
+<div class="logo-circle">
+
+🏆
+
+</div>
+
+<h1 class="logo-title">
+Quiz Master
+</h1>
+
+<p class="logo-version">
+Professional Edition v2.0
+</p>
+
+<div class="loader">
+
+<div class="loader-bar">
+
+<div id="loaderFill"></div>
+
+</div>
+
+</div>
+
+<p class="loading-text">
+Loading...
+</p>
+
+</div>
+
+</div>
+
+<!-- Home Screen -->
+
+<div id="homeScreen" class="screen">
+
+<header class="top-header">
+
+<div>
+
+<h2>
+Quiz Master Pro
+</h2>
+
+<p>
+Challenge Your Brain
+</p>
+
+</div>
+
+<button
+id="themeBtn"
+class="icon-btn"
+title="Theme"
+>
+
+🌙
+
+</button>
+
+</header>
+
+<section class="hero-card">
+
+<h1>
+
+Ready to Play?
+
+</h1>
+
+<p>
+
+Practice with thousands of exciting questions.
+
+</p>
+
+<div class="hero-buttons">
+
+<button
+id="playNowBtn"
+class="primary-btn"
+>
+
+▶ Start Quiz
+
+</button>
+
+<button
+id="leaderboardBtn"
+class="secondary-btn"
+>
+
+🏆 Leaderboard
+
+</button>
+
+</div>
+
+</section>
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<h3 id="playedCount">
+0
+</h3>
+
+<p>
+Games Played
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="winRate">
+0%
+</h3>
+
+<p>
+Accuracy
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="bestScore">
+0
+</h3>
+
+<p>
+Best Score
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="totalCoins">
+0
+</h3>
+
+<p>
+Coins
+</p>
+
+</div>
+
+</section>
+
+<section class="category-section">
+
+<div class="section-title">
+
+<h2>
+
+Choose Category
+
+</h2>
+
+</div>
+
+<div class="category-grid">
+
+<button
+class="category-card"
+data-category="general"
+>
+
+<div class="emoji">
+
+🌍
+
+</div>
+
+<h3>
+
+General
+
+</h3>
+
+<p>
+
+Mixed Questions
+
+</p>
+
+</button>
+
+<button
+class="category-card"
+data-category="science"
+>
+
+<div class="emoji">
+
+🧪
+
+</div>
+
+<h3>
+
+Science
+
+</h3>
+
+<p>
+
+Physics & Biology
+
+</p>
+
+</button>
+
+<button
+class="category-card"
+data-category="math"
+>
+
+<div class="emoji">
+
+➗
+
+</div>
+
+<h3>
+
+Mathematics
+
+</h3>
+
+<p>
+
+Numbers & Logic
+
+</p>
+
+</button>
+
+<button
+class="category-card"
+data-category="history"
+>
+
+<div class="emoji">
+
+📜
+
+</div>
+
+<h3>
+
+History
+
+</h3>
+
+<p>
+
+Past Events
+
+</p>
+
+  </button>
+                <button
+                    class="category-card"
+                    data-category="geography"
+                >
+
+                    <div class="emoji">
+                        🌎
+                    </div>
+
+                    <h3>
+                        Geography
+                    </h3>
+
+                    <p>
+                        World & Places
+                    </p>
+
+                </button>
+
+                <button
+                    class="category-card"
+                    data-category="technology"
+                >
+
+                    <div class="emoji">
+                        💻
+                    </div>
+
+                    <h3>
+                        Technology
+                    </h3>
+
+                    <p>
+                        Computers & AI
+                    </p>
+
+                </button>
+
+                <button
+                    class="category-card"
+                    data-category="sports"
+                >
+
+                    <div class="emoji">
+                        ⚽
+                    </div>
+
+                    <h3>
+                        Sports
+                    </h3>
+
+                    <p>
+                        Games & Players
+                    </p>
+
+                </button>
+
+                <button
+                    class="category-card"
+                    data-category="mixed"
+                >
+
+                    <div class="emoji">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Mixed Quiz
+                    </h3>
+
+                    <p>
+                        Random Challenge
+                    </p>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- Quiz Screen -->
+
+    <div
+        id="quizScreen"
+        class="screen"
+    >
+
+        <header class="quiz-header">
+
+            <button
+                id="backHomeBtn"
+                class="icon-btn"
+            >
+
+                ←
+
+            </button>
+
+            <div class="progress-area">
+
+                <div class="progress-text">
+
+                    <span id="questionNumber">
+                        1
+                    </span>
+
+                    /
+
+                    <span id="totalQuestions">
+                        10
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progressFill"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="timer"
+                class="timer"
+            >
+
+                30
+
+            </div>
+
+        </header>
+
+        <main class="quiz-container">
+
+            <div
+                id="questionCard"
+                class="question-card"
+            >
+
+                <div
+                    id="questionCategory"
+                    class="question-category"
+                >
+
+                    General
+
+                </div>
+
+                <h2
+                    id="questionText"
+                >
+
+                    Questions will appear here...
+
+                </h2>
+
+            </div>
+
+            <div
+                id="answerContainer"
+                class="answer-container"
+            >
+
+            </div>
+
+            <div class="quiz-bottom">
+
+                <button
+                    id="nextQuestionBtn"
+                    class="primary-btn"
+                >
+
+                    Next Question →
+
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- Result Screen -->
+
+    <div
+        id="resultScreen"
+        class="screen"
+    >
+
+        <div class="result-box">
+
+            <div
+                id="resultEmoji"
+                class="result-emoji"
+            >
+
+                🎉
+
+            </div>
+
+            <h1>
+
+                Quiz Finished
+
+            </h1>
+
+            <h2
+                id="finalScore"
+            >
+
+                0 / 10
+
+            </h2>
+
+            <p
+                id="resultMessage"
+            >
+
+                Excellent Work!
+
+            </p>
+
+            <div class="result-stats">
+
+                <div class="result-item">
+
+                    <span>
+
+                        Correct
+
+                    </span>
+
+                    <strong
+                        id="correctAnswers"
+                    >
+
+                        0
+
+                    </strong>
+
+                </div>
+
+                <div class="result-item">
+
+                    <span>
+
+                        Wrong
+
+                    </span>
+
+                    <strong
+                        id="wrongAnswers"
+                    >
+
+                        0
+
+                    </strong>
+
+                </div>
+
+                <div class="result-item">
+
+                    <span>
+
+                        Coins Earned
+
+                    </span>
+
+                    <strong
+                        id="earnedCoins"
+                    >
+
+                        +0
+
+                    </strong>
+
+                </div>
+
+            </div>
+                        <div class="result-buttons">
+
+                <button
+                    id="playAgainBtn"
+                    class="primary-btn"
+                >
+
+                    🔄 Play Again
+
+                </button>
+
+                <button
+                    id="goHomeBtn"
+                    class="secondary-btn"
+                >
+
+                    🏠 Home
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Leaderboard Screen -->
+
+    <div
+        id="leaderboardScreen"
+        class="screen"
+    >
+
+        <header class="top-header">
+
+            <button
+                id="leaderboardBackBtn"
+                class="icon-btn"
+            >
+
+                ←
+
+            </button>
+
+            <h2>
+
+                Leaderboard
+
+            </h2>
+
+            <div></div>
+
+        </header>
+
+        <div class="leaderboard-container">
+
+            <div class="leaderboard-top">
+
+                <div class="leader-card gold">
+
+                    🥇
+
+                    <h3>
+
+                        Champion
+
+                    </h3>
+
+                    <p
+                        id="topPlayer"
+                    >
+
+                        You
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                id="leaderboardList"
+                class="leaderboard-list"
+            >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Settings Modal -->
+
+    <div
+        id="settingsModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <h2>
+
+                Settings
+
+            </h2>
+
+            <div class="setting-item">
+
+                <label>
+
+                    Sound
+
+                </label>
+
+                <input
+                    id="soundToggle"
+                    type="checkbox"
+                    checked
+                />
+
+            </div>
+
+            <div class="setting-item">
+
+                <label>
+
+                    Music
+
+                </label>
+
+                <input
+                    id="musicToggle"
+                    type="checkbox"
+                />
+
+            </div>
+
+            <div class="setting-item">
+
+                <label>
+
+                    Dark Mode
+
+                </label>
+
+                <input
+                    id="darkModeToggle"
+                    type="checkbox"
+                />
+
+            </div>
+
+            <button
+                id="closeSettingsBtn"
+                class="primary-btn"
+            >
+
+                Save
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Toast -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+
+        Saved Successfully
+
+    </div>
+
+
+
+    <!-- Audio -->
+
+    <audio
+        id="correctSound"
+        preload="auto"
+    ></audio>
+
+    <audio
+        id="wrongSound"
+        preload="auto"
+    ></audio>
+
+    <audio
+        id="clickSound"
+        preload="auto"
+    ></audio>
+
+
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
